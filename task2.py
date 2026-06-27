@@ -1,10 +1,14 @@
 total = 0
+
 while True:
     expense = input("Enter expense amount (or type 'done' to finish): ")
 
     if expense.lower() == "done":
         break
 
-    total = total + float(expense)
+    try:
+        total += float(expense)
+    except ValueError:
+        print("Please enter a valid number or 'done'.")
 
 print("Total Spent:", total)
